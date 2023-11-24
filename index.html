@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<title>Site Maintenance</title>
+<link rel="icon" type="image/x-icon" href="/img/Company-Logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
+
+    <style>
+  @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
+  body { text-align: center; padding: 150px; font: 20px Alike, serif;; color: #333; }
+  .h1 { text-align: center; font-size: 60px; }
+  .tail { color: #0408cc; font: 20px Alike, serif;}
+  .container { display: block; text-align: left; width: 750px; margin: 0 auto; }
+  .contact a { color: #0408cc; text-decoration: none; }
+  .contact a:hover { color: #333; text-decoration: none; }
+  .contact {font: 20px Alike, serif; color: #333;}
+    </style>
+
+<div class="container">
+        <p class="h1">We're working on it!</p>
+        <p class="contact">We apologize for any inconvenience, but our website is currently undergoing some scheduled maintenance. In the meantime, you can still <a href="mailto:jose@hosted.website">contact us</a>.  We appreciate your patience and understanding.</p>
+        <p>Thank you for choosing <b class = "tail" > Jose & Sons General Construction Inc. </b></p>
+</div>
+    <script>
+    var emailLink = document.querySelector(".contact a");
+    var currentEmail = emailLink.getAttribute("href");
+    var hostedDomain = window.location.hostname;
+    var newEmail = currentEmail.replace(/@.*/, "@" + hostedDomain);
+    emailLink.setAttribute("href", newEmail);
+    var tailParagraph = document.querySelector(".tail");
+    var currentText = tailParagraph.textContent;
+    var hostedName = hostedDomain.replace(/\..*/, "");
+    var capitalizedHostedName = hostedName.charAt(0).toUpperCase() + hostedName.slice(1);
+    var newText = currentText.replace("hosted.website", capitalizedHostedName);
+    tailParagraph.textContent = newText;
+    emailLink.textContent = "contact us";
+</script>
